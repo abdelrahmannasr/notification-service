@@ -1,0 +1,344 @@
+{
+	"info": {
+		"_postman_id": "9a3f4166-8065-440f-9abd-b7a484752ccc",
+		"name": "NotificationService",
+		"description": "# Introduction\nNotification Service APIs Documentation\n\n# Overview\nPlease note that the way I used to send an array it's just this way to test it on the postman.\n\n# Error Codes\nThe Error will send as an object of code and message",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SMS API",
+			"item": [
+				{
+					"name": "Send Group SMS",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"type": "text",
+								"value": "en"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "messages[0].[languageId]",
+									"value": "5f325a827092bccdee53dd2b",
+									"type": "text"
+								},
+								{
+									"key": "messages[0].[value]",
+									"value": "اختبار الرسائل",
+									"type": "text"
+								},
+								{
+									"key": "messages[1].[languageId]",
+									"value": "5f325b047092bccdee53dd2c",
+									"type": "text"
+								},
+								{
+									"key": "messages[1].[value]",
+									"value": "Test Messages",
+									"type": "text"
+								},
+								{
+									"key": "userIds[0]",
+									"value": "5f325b2c7092bccdee53dd2d",
+									"type": "text"
+								},
+								{
+									"key": "userIds[1]",
+									"value": "5f325e8f7092bccdee53dd30",
+									"type": "text"
+								}
+							],
+							"options": {
+								"urlencoded": {}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/{{apiVersion}}/send-group-sms",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{apiVersion}}",
+								"send-group-sms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send SMS",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"type": "text",
+								"value": "en"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "messages[0].[languageId]",
+									"value": "5f325a827092bccdee53dd2b",
+									"type": "text"
+								},
+								{
+									"key": "messages[0].[value]",
+									"value": "اختبار الرسائل",
+									"type": "text"
+								},
+								{
+									"key": "messages[1].[languageId]",
+									"value": "5f325b047092bccdee53dd2c",
+									"type": "text"
+								},
+								{
+									"key": "messages[1].[value]",
+									"value": "Test Messages",
+									"type": "text"
+								},
+								{
+									"key": "userId",
+									"value": "5f325b2c7092bccdee53dd2d",
+									"type": "text"
+								}
+							],
+							"options": {
+								"urlencoded": {}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/{{apiVersion}}/send-sms",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{apiVersion}}",
+								"send-sms"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "e2ff0dd9-ba19-4096-a42a-5439044a2eda",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "ee4516a0-ad4a-481d-b0c5-6fdb491ec235",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Push Notification API ",
+			"item": [
+				{
+					"name": "Send Group Push Notification",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"type": "text",
+								"value": "en"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "messages[0].[languageId]",
+									"value": "5f325a827092bccdee53dd2b",
+									"type": "text"
+								},
+								{
+									"key": "messages[0].[value]",
+									"value": "اختبار الرسائل",
+									"type": "text"
+								},
+								{
+									"key": "messages[1].[languageId]",
+									"value": "5f325b047092bccdee53dd2c",
+									"type": "text"
+								},
+								{
+									"key": "messages[1].[value]",
+									"value": "Test Messages",
+									"type": "text"
+								},
+								{
+									"key": "userIds[0]",
+									"value": "5f325b2c7092bccdee53dd2d",
+									"type": "text"
+								},
+								{
+									"key": "userIds[1]",
+									"value": "5f325e8f7092bccdee53dd30",
+									"type": "text"
+								}
+							],
+							"options": {
+								"urlencoded": {}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/{{apiVersion}}/send-group-push-notification",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{apiVersion}}",
+								"send-group-push-notification"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send SMS",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"type": "text",
+								"value": "en"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "messages[0].[languageId]",
+									"value": "5f325a827092bccdee53dd2b",
+									"type": "text"
+								},
+								{
+									"key": "messages[0].[value]",
+									"value": "اختبار الرسائل",
+									"type": "text"
+								},
+								{
+									"key": "messages[1].[languageId]",
+									"value": "5f325b047092bccdee53dd2c",
+									"type": "text"
+								},
+								{
+									"key": "messages[1].[value]",
+									"value": "Test Messages",
+									"type": "text"
+								},
+								{
+									"key": "userId",
+									"value": "5f325b2c7092bccdee53dd2d",
+									"type": "text"
+								}
+							],
+							"options": {
+								"urlencoded": {}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/{{apiVersion}}/send-push-notification",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{apiVersion}}",
+								"send-push-notification"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "90e8acc1-2738-4de2-ae8a-41f05b4319b5",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "eda02481-cdb8-4d16-a91e-8aa902603e9c",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "86ede3ef-cb30-4c3d-8af3-7105efdf5412",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "dc4d78d2-48d2-40d2-badb-18d506faebe1",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "910b8f54-049d-4a45-970a-d206d798bcd1",
+			"key": "baseUrl",
+			"value": "http://localhost:4000"
+		},
+		{
+			"id": "315f8543-decb-4cba-801a-872d6eea22da",
+			"key": "apiVersion",
+			"value": "v0.0.1/api"
+		},
+		{
+			"id": "92bb8708-fae8-41bd-8049-c051d52c0210",
+			"key": "accessToken",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lc3RhbXAiOjE1OTM2MTA3MzUzNDQsInBsYXRmb3JtIjoiV0VCIiwibmFtZSI6IkFiZGVsUmFobWFuIE5hc3IiLCJlbWFpbCI6ImEubmFzckBvYmVpa2FuLmNvbS5zYSIsImRldmljZUlkIjoiIiwiaXNWZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNTkzNjEwNzM1LCJleHAiOjE1OTM2MTc5MzUsInN1YiI6IjVlZWI2NmJhNDZkMTI0MzU3NDIyYmYzMCJ9.VyyLg9fu3OxP6gh_oYeyPxB2kxE_IqYVMA3hJTAugoM"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
