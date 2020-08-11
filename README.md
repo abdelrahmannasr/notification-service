@@ -1,17 +1,12 @@
 # Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+This is the sample for notification service in node js to send SMS and push notification to group of users or a specific user.
 
 # Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+Please, follow the following steps to start using the service:
+1.	Clone the repo from master branch
+2.	To run the code in dev environment use this command: npm run start-dev
+3.	To run the code in prod environment use this command: npm build then npm start
+4.	To try the service using on postmant use the attached file for api in postman
+5.  To open documentation add this part to base url "swagger/#/" ex: "http://localhost:4000/swagger/#/"
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
-
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
-
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
+If you want to learn more don't hesitate to call me anytime
