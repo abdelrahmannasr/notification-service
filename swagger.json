@@ -1,0 +1,244 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "notification-service",
+        "description": "This is a notification service that responsible for sending sms and push notification to users",
+        "version": "0.0.1",
+        "license": {
+            "name": "ISC"
+        }
+    },
+    "basePath": "/v0.0.1/api",
+    "schemes": [
+        "https",
+        "http"
+    ],
+    "definitions": {
+        "MultiLangFieldInput": {
+            "type": "object",
+            "required": [
+                "languageId",
+                "value"
+            ],
+            "properties": {
+                "languageId": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "string"
+                }
+            },
+            "xml": {
+                "name": "MultiLangFieldInput"
+            }
+        },
+        "SendGroupSMSRequest": {
+            "type": "object",
+            "properties": {
+                "messages": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/MultiLangFieldInput"
+                    }
+                },
+                "userIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "xml": {
+                "name": "SendGroupSMSRequest"
+            }
+        },
+        "SendSMSRequest": {
+            "type": "object",
+            "properties": {
+                "messages": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/MultiLangFieldInput"
+                    }
+                },
+                "userId": {
+                    "type": "string"
+                }
+            },
+            "xml": {
+                "name": "SendSMSRequest"
+            }
+        },
+        "SendGroupPushNotificationRequest": {
+            "type": "object",
+            "properties": {
+                "messages": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/MultiLangFieldInput"
+                    }
+                },
+                "userIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "xml": {
+                "name": "SendGroupSMSRequest"
+            }
+        },
+        "SendPushNotificationRequest": {
+            "type": "object",
+            "properties": {
+                "messages": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/MultiLangFieldInput"
+                    }
+                },
+                "userId": {
+                    "type": "string"
+                }
+            },
+            "xml": {
+                "name": "SendSMSRequest"
+            }
+        }
+    },
+    "paths": {
+        "/send-group-sms": {
+            "post": {
+                "summary": "Send SMS to group of users",
+                "operationId": "GroupSMS",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/SendGroupSMSRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    },
+                    "200": {
+                        "description": "Success response"
+                    }
+                }
+            }
+        },
+        "/send-sms": {
+            "post": {
+                "summary": "Send SMS to specific user",
+                "operationId": "SendSMS",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/SendSMSRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    },
+                    "200": {
+                        "description": "Success response"
+                    }
+                }
+            }
+        },
+        "/send-group-push-notification": {
+            "post": {
+                "summary": "Send push notification to group of users",
+                "operationId": "GroupPushNotification",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/SendGroupPushNotificationRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    },
+                    "200": {
+                        "description": "Success response"
+                    }
+                }
+            }
+        },
+        "/send-push-notification": {
+            "post": {
+                "summary": "Send push notification to specific user",
+                "operationId": "SendPushNotification",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/SendPushNotificationRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    },
+                    "200": {
+                        "description": "Success response"
+                    }
+                }
+            }
+        }
+    }
+}
