@@ -9,8 +9,7 @@ export class SendSMSRequest extends BaseRequest {
     @IsDefined()
     @Type(() => MultiLangFieldInput)
     public messages: MultiLangFieldInput[];
-
-    @IsArray()
+    
     @IsDefined()
     public userId: string;
 }

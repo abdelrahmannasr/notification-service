@@ -14,7 +14,7 @@ export class SMSController extends BaseController {
     public async sendGroupSMS(request: SendGroupSMSRequest): Promise<IResponse> {
         return new Promise(async (resolve, reject) => {
             try {
-                const users = await this.userRepository.getUsersByIds(request.userIds);
+                const users = await this.userRepository.getUsersByIds(request.userIds);                
                 users.forEach(async user => {
                     const message = request.messages.find(msg => msg.languageId === user.favLang.id);
                     if (message) {

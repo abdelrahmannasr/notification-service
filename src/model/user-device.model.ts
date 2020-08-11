@@ -10,12 +10,11 @@ export const UserDeviceSchema: Schema = new Schema<IUserDevice>(
         notificationToken: { type: String, required: [true, 'required'], trim: true },
         osVersion: { type: String, required: [true, 'required'] },
         deviceModel: { type: String },
-        status: { type: DeviceStatus, default: DeviceStatus.Active },
-        accessToken: { type: String },
+        status: { type: DeviceStatus, default: DeviceStatus.Active }
     },
     {
         collection: 'userDevices',
-        timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' },
+        timestamps: true
     }
 );
 

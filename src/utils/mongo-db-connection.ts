@@ -3,11 +3,9 @@ import mongoose from 'mongoose';
 
 type TInput = {
   db: string;
-  username: string;
-  password: string;
   isProd: boolean;
 };
-export default ({ db, username, password, isProd }: TInput): Promise<any> => {
+export default ({ db, isProd }: TInput): Promise<any> => {
   return new Promise<any>((resolve, reject) => {
     const connectToMongoDB = () => {
       mongoose
@@ -15,10 +13,10 @@ export default ({ db, username, password, isProd }: TInput): Promise<any> => {
           useNewUrlParser: true,
           autoIndex: isProd,
           useUnifiedTopology: true,
-          auth: {
-            user: username,
-            password: password
-          },
+          // auth: {
+          //   user: username,
+          //   password: password
+          // },
           authSource: "admin"
         })
         .then(() => {

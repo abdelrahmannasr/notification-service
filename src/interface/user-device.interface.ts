@@ -9,8 +9,4 @@ export interface IUserDevice extends Document {
     osVersion: string;
     deviceModel: string;
     status: DeviceStatus;
-    accessToken: string;
-    createdAt: Date;
-    updatedAt: Date;
-    lastLoginDate: Date;
 }

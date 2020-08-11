@@ -10,7 +10,6 @@ export class SendPushNotificationRequest extends BaseRequest {
     @Type(() => MultiLangFieldInput)
     public messages: MultiLangFieldInput[];
 
-    @IsArray()
     @IsDefined()
     public userId: string;
 }

@@ -10,6 +10,7 @@ import { UserRepository } from './repository';
 import { SMSController, PushNotificationController } from './controller';
 import * as  httpContext from 'express-http-context';
 import { SMSRoute } from './route/sms.route';
+import { StageType } from './enum';
 
 const session = require('express-session');
 export class App {
@@ -23,7 +24,7 @@ export class App {
   public start(): Promise<App> {
     return new Promise(async (resolve, reject) => {
       try {
-        // await this.initializeDatabase();
+        await this.initializeDatabase();
         this.initializeRoutesWithServices();
         resolve(this);
       } catch (error) {
@@ -32,14 +33,12 @@ export class App {
     });
   }
 
-  // private initializeDatabase(): Promise<any> {
-  //   return connectToMongoDB({
-  //     db: ENV.DB_CONNECTION,
-  //     username: ENV.DB_USERNAME,
-  //     password: ENV.DB_PASSWORD,
-  //     isProd: ENV.STAGE_TYPE != StageType.Production,
-  //   });
-  // }
+  private initializeDatabase(): Promise<any> {
+    return connectToMongoDB({
+      db: ENV.DB_CONNECTION,
+      isProd: ENV.STAGE_TYPE != StageType.Production,
+    });
+  }
 
   private setupConfigurations() {
     // Setup Router
