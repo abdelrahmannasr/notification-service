@@ -9,5 +9,8 @@ Please, follow the following steps to start using the service:
 4.	To try the service using on postmant use the attached file "NotificationService.postman_collection.json" for api in postman
 5.  To open documentation add this part to base url "swagger/#/" ex: "http://localhost:4000/swagger/#/"
 
+# About this service
+this service developed by me using the awesome nodejs with mongo for the database using in MongoDB Atlas and the swagger for documentation APIs
+
 If you want to learn more don't hesitate to call me anytime
 
