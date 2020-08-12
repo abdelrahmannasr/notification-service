@@ -5,7 +5,7 @@ This is the sample for notification service in node js to send SMS and push noti
 Please, follow the following steps to start using the service:
 1.	Clone the repo from master branch
 2.	To run the code in dev environment use this command: npm run start-dev
-3.	To run the code in prod environment use this command: npm run build then npm start
+3.	To run the code in prod environment use this command: npm run build then npm run start
 4.	To try the service using on postmant use the attached file "NotificationService.postman_collection.json" for api in postman
 5.  To open documentation add this part to base url "swagger/#/" ex: "http://localhost:4000/swagger/#/"
 
